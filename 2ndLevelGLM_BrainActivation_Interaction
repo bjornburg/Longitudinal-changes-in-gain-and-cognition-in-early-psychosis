@@ -1,0 +1,78 @@
+%-----------------------------------------------------------------------
+% Job saved on 26-Jul-2022 14:11:19 by cfg_util (rev $Rev: 7345 $)
+% spm SPM - SPM12 (7771)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+%Within subject paired t-tests of timepoint differences in brain activation created by interference contrast are contrasted at second level to examine for group differences created by timepoint. 
+matlabbatch{1}.spm.stats.factorial_design.dir = {'/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/T1_less_T2'};
+%%
+matlabbatch{1}.spm.stats.factorial_design.des.t2.scans1 = {
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-01/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-02/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-03/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-04/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-05/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-06/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-08/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-09/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-10/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-11/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-12/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-13/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-14/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-18/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-24/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-26/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-27/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-28/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/EPY_paired_t-test/sub-30/con_0002.nii,1'
+                                                           };
+%%
+%%
+matlabbatch{1}.spm.stats.factorial_design.des.t2.scans2 = {
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-32/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-33/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-35/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-37/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-38/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-39/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-41/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-42/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-43/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-44/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-48/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-50/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-51/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-52/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-53/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-54/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-55/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-58/con_0002.nii,1'
+                                                           '/mnt/data/bjornB/T2/fmri_analysis/Flexible_Factorial_Longitudinal/HC_paired_t-test/sub-59/con_0002.nii,1'
+                                                           };
+%%
+matlabbatch{1}.spm.stats.factorial_design.des.t2.dept = 0;
+matlabbatch{1}.spm.stats.factorial_design.des.t2.variance = 1;
+matlabbatch{1}.spm.stats.factorial_design.des.t2.gmsca = 0;
+matlabbatch{1}.spm.stats.factorial_design.des.t2.ancova = 0;
+matlabbatch{1}.spm.stats.factorial_design.cov = struct('c', {}, 'cname', {}, 'iCFI', {}, 'iCC', {});
+matlabbatch{1}.spm.stats.factorial_design.multi_cov = struct('files', {}, 'iCFI', {}, 'iCC', {});
+matlabbatch{1}.spm.stats.factorial_design.masking.tm.tm_none = 1;
+matlabbatch{1}.spm.stats.factorial_design.masking.im = 1;
+matlabbatch{1}.spm.stats.factorial_design.masking.em = {''};
+matlabbatch{1}.spm.stats.factorial_design.globalc.g_omit = 1;
+matlabbatch{1}.spm.stats.factorial_design.globalm.gmsca.gmsca_no = 1;
+matlabbatch{1}.spm.stats.factorial_design.globalm.glonorm = 1;
+matlabbatch{2}.spm.stats.fmri_est.spmmat(1) = cfg_dep('Factorial design specification: SPM.mat File', substruct('.','val', '{}',{1}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
+matlabbatch{2}.spm.stats.fmri_est.write_residuals = 0;
+matlabbatch{2}.spm.stats.fmri_est.method.Classical = 1;
+matlabbatch{3}.spm.stats.con.spmmat(1) = cfg_dep('Model estimation: SPM.mat File', substruct('.','val', '{}',{2}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.name = 'EPY>HC';
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.weights = [1 -1];
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.sessrep = 'none';
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.name = 'EPY<HC';
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.weights = [-1 1];
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.sessrep = 'none';
+matlabbatch{3}.spm.stats.con.delete = 0;
+
+
