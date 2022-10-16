@@ -1,0 +1,277 @@
+% Extract Reaction Times and Accuracy from Presentation Logs for each subject
+[filename, pathname, filterindex] = uigetfile('*.log', 'select your log file');
+ 
+infile = [pathname filename];
+% start text in log file!!
+starttext = 'fixation_block';
+ 
+ 
+fid=fopen(infile);
+lines={};
+while ~feof(fid)
+    lines{end+1}=fgetl(fid);
+end
+fclose(fid);
+ 
+ 
+l_header=4;
+l_start=6;
+ 
+ 
+%scan through the lines... and get all the unique types.
+l_ind=l_start;
+stop=0;
+types={};
+while ~stop
+    str=lines{l_ind};
+    
+    if numel(str)>0
+        
+        tmp=regexp(str,'[^\t]*','match');
+        types{end+1}=tmp{3};
+        
+        l_ind=l_ind+1;
+        
+    end
+    
+    if l_ind > numel(lines)||strcmp(types{end},'Quit')
+        types(end)=[];
+        stop=1;
+    end
+    
+end
+alltypes=unique(types);
+ 
+ 
+ 
+% build our struct, based on the types!
+ 
+s=struct();s(:)=[];
+ 
+for i=1:numel(alltypes)
+    
+    s(1).(alltypes{i})={};
+    
+end
+ 
+ 
+ 
+ 
+% do something for some things.
+l_ind=l_start;
+stop=0;
+ 
+while ~stop
+    str=lines{l_ind};
+    
+    if numel(str)>0
+        
+        tmp=regexp(str,'[^\t]*','match');
+        tmp_inds=regexp(str,'[^\t]*');
+        currenttype=tmp{3};
+        rest_str = tmp(4:end);
+       
+        
+        
+        switch currenttype
+            
+            case 'Response'
+                s(1).Response(end+1,:) = rest_str;
+                                    
+            case 'Pulse'
+                s(1).Pulse(end+1,:) = rest_str;
+                
+                
+            case 'Picture'
+                s(1).Picture(end+1,:) = rest_str;
+                
+        end
+        
+        
+        l_ind=l_ind+1;
+        
+    end
+    
+    if l_ind > numel(lines)||strcmp(currenttype,'Quit')
+        types(end)=[];
+        stop=1;
+    end
+    
+end
+ 
+ 
+ 
+ 
+% now task specific. use only if you start the scanner with a Picture!!
+str = s.Picture(strcmp(s.Picture(:,1),starttext),:);
+str=str(1,:);
+%Ramona: strat time 4th Pulse
+% keyboard;
+scanner_start_time = str2num(str{2}); % + str2num(str{6});
+ 
+% here comes some logic w.r.t. the faces...
+ 
+str_condition={'neutral','interference','fixation'};
+str_regex={'.*neutral.*','.*_interference_.*','.*fixation_block.*'};
+ 
+m=struct('onset','duration','name','value');
+m(:)=[];
+ 
+ 
+for i=1:numel(str_regex)
+ 
+    tmp=regexp([s.Picture(:,1)]',str_regex{i});mark=[];for i_tmp=1:numel(tmp);if numel(tmp{i_tmp})>0;mark(end+1)=i_tmp;end;end
+    
+    t_onset = str2double(s.Picture(mark,2))' - scanner_start_time;
+    %t_duration = str2double(s.Picture(mark,5))';
+    
+    % until the NEXT picture!
+    t_duration=[];
+    hitmiss = [];
+    hitmiss_rt = [];
+    for i_mark = 1:numel(mark)
+        tmp_index = mark(i_mark);
+       
+        if tmp_index+1 <= size(s.Picture,1)
+            
+            t_duration(end+1) = str2double(s.Picture(tmp_index+1,2))' - str2double(s.Picture(tmp_index,2))';
+        
+        else
+            
+            t_duration(end+1)  = str2num(s.Response{end,2}) - str2double(s.Picture(tmp_index,2))';
+        
+        end
+        
+        
+        this_hitmiss_rt = str2num(s.Picture{tmp_index,5})/10000;
+        this_hitmiss_val = s.Picture{tmp_index,9};
+        switch this_hitmiss_val
+            case 'hit'
+                hitmiss(end+1) = 1;
+            case 'miss'
+                hitmiss(end+1) = 0;
+            case 'other'
+                hitmiss(end+1) = -1;
+        end
+        
+        hitmiss_rt(end+1) = this_hitmiss_rt;
+    end
+    
+    
+        
+    
+    t_onset = t_onset/10000;
+    t_duration = t_duration/10000;
+    
+    
+    m(end+1).onset = t_onset;
+    m(end).duration = t_duration;
+    m(end).name = str_condition{i};
+    m(end).value = 1*ones(size(t_onset));
+ 
+    m(end).hitmiss = hitmiss;
+    m(end).rt = hitmiss_rt;
+    
+    %outm=[]; for i=1:numel(hm); switch hm{i}; case 'hit'; outm(end+1)=1; case 'miss'; outm(end+1) = 0; case 'other'; outm(end+1) = -1;end; end
+    
+    
+     
+end
+ 
+ 
+times_allpresses = (str2double(s.Response(:,2))' - scanner_start_time) / 10000;
+durations_allpresses = (str2double(s.Response(:,3)))' / 10000;
+mark_during_experiment = times_allpresses>0;
+ 
+m(end+1).onset = times_allpresses(mark_during_experiment);
+m(end).duration = durations_allpresses(mark_during_experiment);
+m(end).name = 'press';
+m(end).value = 1*ones(size(m(end).onset));
+ 
+% so... write it all away to txt files!
+ 
+% .txt files for FEAT.
+outdir = [pathname 'out'];
+%mkdir(outdir);
+for i=1:numel(m)
+    
+    fid=fopen(sprintf('%s/%s.txt',outdir,m(i).name),'w+');
+    
+    for j=1:numel(m(i).onset);
+        str = sprintf('%f\t%f\t%f\n',m(i).onset(j),m(i).duration(j),m(i).value(j));
+        if j==numel(m(i).onset);str(end)=[];end
+        fprintf(fid,str);
+    end
+ 
+    fclose(fid);
+end
+ 
+% names, onsets, durations for SPM...
+ 
+names={};
+onsets={};
+durations={};
+pmods={};
+ 
+% neutrals... %(accurate)
+%names{end+1} = 'neu';
+%onsets{end+1} = m(1).onset(logical(m(1).hitmiss));
+%durations{end+1} = m(1).duration(logical(m(1).hitmiss));
+%pmods{end+1} = m(1).rt(logical(m(1).hitmiss));
+ 
+ 
+% neutrals... % see below
+names{end+1} = 'neu';
+onsets{end+1} = m(1).onset;
+durations{end+1} = m(1).duration;
+pmods{end+1} = m(1).rt;
+ 
+ 
+%these are the errors only!
+%names{end+1} = 'neu - errors';
+%onsets{end+1} = m(1).onset(~logical(m(1).hitmiss));
+%durations{end+1} = m(1).duration(~logical(m(1).hitmiss));
+%pmods{end+1} = m(1).rt(~logical(m(1).hitmiss));
+ 
+% interference... (only the accurate ones)
+%names{end+1} = 'int';
+%onsets{end+1} = m(2).onset(logical(m(2).hitmiss));
+%durations{end+1} = m(2).duration(logical(m(2).hitmiss));
+%pmods{end+1} = m(2).rt(logical(m(2).hitmiss));
+ 
+% ALL - inaccurate + accurate trials - will become a block in the GLM
+names{end+1} = 'int';
+onsets{end+1} = m(2).onset;
+durations{end+1} = m(2).duration;
+pmods{end+1} = m(2).rt;
+ 
+% these are the errors only!
+%names{end+1} = 'int - errors';
+%onsets{end+1} = m(2).onset(~logical(m(2).hitmiss));
+%durations{end+1} = m(2).duration(~logical(m(2).hitmiss));
+%pmods{end+1} = m(2).rt(~logical(m(2).hitmiss));
+ 
+% fixation... 
+names{end+1} = 'fix';
+onsets{end+1} = m(3).onset;
+durations{end+1} = m(3).duration;
+pmods{end+1} = m(3).rt;
+ 
+ 
+ 
+ 
+ 
+%m(1).onset(logical(m(1).hitmiss))
+ 
+ 
+%names = {m.name};
+%onsets = {m.onset};
+%durations = {m.duration};
+ 
+% new = 'negative';
+% new.onset = [onset{1,1} onset{1,2}];
+ 
+% names(end)=[];onsets(end)=[];durations(end)=[];
+% save model.mat names onsets durations pmod ? maybe
+save model_pmods_fix.mat names onsets durations pmods
+
