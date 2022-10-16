@@ -1,0 +1,93 @@
+clear all
+%-----------------------------------------------------------------------
+% Job saved on 22-Jan-2020 15:08:32 by cfg_util (rev $Rev: 6460 $)
+% spm SPM - SPM12 (6906)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+ 
+% Inputdirs
+inputdir='/mnt/data/bjornB/fmri_analysis/fmri_batch_July2020'; % root inputdir for sublist
+%taskid='baseline';
+ 
+%% Outputdirs
+outputdir='/mnt/data/bjornB/fmri_analysis/1stLevel_July2020';  % root outputdir for sublist
+sublist=dir(fullfile(inputdir,'sub-0*'));
+% isFile   = [sublist.isdir];
+% sublist = {sublist(isFile).name};
+%mkdir(outputdir,char(sublist)); % for >R2016b, use B = string(A) 
+ 
+%% Loop for sublist
+spm('Defaults','fMRI'); %Initialise SPM fmri
+spm_jobman('initcfg');  %Initialise SPM batch mode
+ 
+ 
+% for i=1:length(sublist)
+for i=1:length(sublist)
+    fullname = fullfile(sublist(i).folder, sublist(i).name);
+    %% Inputdirs and files (Default)
+   
+    func=fullfile(fullname,([sublist(i).name,'_task-rest_space-MNI152NLin6Asym_res-native_desc-preproc_bold_confounds-removed.nii']));
+    %motion=fullfile(fullname,(['rp_',sublist(i).name,'_topup.txt']));
+   
+    %end
+   
+   
+matlabbatch{1}.spm.stats.fmri_spec.dir = {[outputdir,'/',sublist(i).name]};
+mkdir(matlabbatch{1}.spm.stats.fmri_spec.dir{1});
+matlabbatch{1}.spm.stats.fmri_spec.timing.units = 'secs';
+matlabbatch{1}.spm.stats.fmri_spec.timing.RT = 0.82;
+matlabbatch{1}.spm.stats.fmri_spec.timing.fmri_t = 16;
+matlabbatch{1}.spm.stats.fmri_spec.timing.fmri_t0 = 8;
+%%
+ 
+total_fn = 490;
+ 
+funccellswr = cell(total_fn,1);
+ 
+for ii = 1:total_fn
+    funccellswr(ii,1) = {[func, ',',num2str(ii)]};
+end
+ 
+matlabbatch{1}.spm.stats.fmri_spec.sess.scans = funccellswr;
+ 
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).name = 'Neutral';
+ 
+load([inputdir,'/',sublist(i).name,'/','model_pmods.mat']);
+ 
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).onset = onsets{1,1}.';
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).duration = durations{1,1}.';
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).tmod = 0;
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).pmod = struct('name', {}, 'param', {}, 'poly', {});
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(1).orth = 1;
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).name = 'Interference';
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).onset = onsets{1,2}.';
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).duration = durations{1,2}.';
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).tmod = 0;
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).pmod = struct('name', {}, 'param', {}, 'poly', {});
+matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).orth = 1;
+matlabbatch{1}.spm.stats.fmri_spec.sess.multi = {''};
+matlabbatch{1}.spm.stats.fmri_spec.sess.regress = struct('name', {}, 'val', {});
+%matlabbatch{1}.spm.stats.fmri_spec.sess.multi_reg = {motion};
+matlabbatch{1}.spm.stats.fmri_spec.sess.hpf = 128;
+matlabbatch{1}.spm.stats.fmri_spec.fact = struct('name', {}, 'levels', {});
+matlabbatch{1}.spm.stats.fmri_spec.bases.hrf.derivs = [0 0];
+matlabbatch{1}.spm.stats.fmri_spec.volt = 1;
+matlabbatch{1}.spm.stats.fmri_spec.global = 'None';
+matlabbatch{1}.spm.stats.fmri_spec.mthresh = 0.8;
+matlabbatch{1}.spm.stats.fmri_spec.mask = {''};
+matlabbatch{1}.spm.stats.fmri_spec.cvi = 'AR(1)';
+ 
+matlabbatch{2}.spm.stats.fmri_est.spmmat(1) = cfg_dep('fMRI model specification: SPM.mat File', substruct('.','val', '{}',{1}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
+matlabbatch{2}.spm.stats.fmri_est.write_residuals = 0;
+matlabbatch{2}.spm.stats.fmri_est.method.Classical = 1;
+ 
+matlabbatch{3}.spm.stats.con.spmmat(1) = cfg_dep('Model estimation: SPM.mat File', substruct('.','val', '{}',{2}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.name = 'MainEffect';
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.weights = [1 1];
+matlabbatch{3}.spm.stats.con.consess{1}.tcon.sessrep = 'none';
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.name = 'Int>Neu';
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.weights = [-1 1];
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.sessrep = 'none';
+%% Run matlabbatch jobs
+    spm_jobman('run',matlabbatch);
+
