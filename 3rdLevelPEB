@@ -1,0 +1,11 @@
+%PEBofPEBs
+ 
+%take 2nd level PEBs and conduct 3rd level PEB with design matrix 3
+load ./X3.mat; %[1 1; -1 1] Commonalities first column, Differences second column
+PEBs = {PEB1; PEB2}; %PEB1 for EP group, PEB2 for HC group
+PEB3 = spm_dcm_peb(PEBs, X3);
+ 
+%BMR and review
+BMA3 = spm_dcm_peb_bmc(PEB3);
+spm_dcm_peb_review(BMA3);
+
