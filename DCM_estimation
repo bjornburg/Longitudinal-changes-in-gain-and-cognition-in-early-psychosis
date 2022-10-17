@@ -1,0 +1,245 @@
+%
+matlabbatch{1}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-32/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-32/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                                                                         };
+%%
+matlabbatch{1}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-32'};
+matlabbatch{1}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{1}.spm.dcm.estimate.est_type = 1;
+matlabbatch{1}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+%%
+matlabbatch{2}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-33/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-33/DCM_nonlinear_Template.mat'
+                                                     
+                                            
+                                                     };
+%%
+matlabbatch{2}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-33'};
+matlabbatch{2}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{2}.spm.dcm.estimate.est_type = 1;
+matlabbatch{2}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+%%
+ 
+matlabbatch{3}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-35/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-35/DCM_nonlinear_Template.mat'
+                                                     
+                                            
+                                                     };
+%%
+matlabbatch{3}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-35'};
+matlabbatch{3}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{3}.spm.dcm.estimate.est_type = 1;
+matlabbatch{3}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{4}.spm.dcm.estimate.dcms.model.dcmmat = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-37/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-37/DCM_nonlinear_Template.mat'
+                                                     
+                                                    
+                                                     };
+%%
+matlabbatch{4}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-37'};
+matlabbatch{4}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{4}.spm.dcm.estimate.est_type = 1;
+matlabbatch{4}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{5}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-38/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-38/DCM_nonlinear_Template.mat'
+                                                     
+                                                    
+                                                     };
+%%
+matlabbatch{5}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-38'};
+matlabbatch{5}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{5}.spm.dcm.estimate.est_type = 1;
+matlabbatch{5}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{6}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-39/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-39/DCM_nonlinear_Template.mat'
+                                                     
+                                                    
+                                                     };
+%%
+matlabbatch{6}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-39'};
+matlabbatch{6}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{6}.spm.dcm.estimate.est_type = 1;
+matlabbatch{6}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+matlabbatch{7}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-41/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-41/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{7}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-41'};
+matlabbatch{7}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{7}.spm.dcm.estimate.est_type = 1;
+matlabbatch{7}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{8}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-42/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-42/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{8}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-42'};
+matlabbatch{8}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{8}.spm.dcm.estimate.est_type = 1;
+matlabbatch{8}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{9}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-43/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-43/DCM_nonlinear_Template.mat'
+                                                     
+                                                     
+                                                     };
+%%
+matlabbatch{9}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-43'};
+matlabbatch{9}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{9}.spm.dcm.estimate.est_type = 1;
+matlabbatch{9}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{10}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-44/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-44/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{10}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-44'};
+matlabbatch{10}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{10}.spm.dcm.estimate.est_type = 1;
+matlabbatch{10}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{11}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-48/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-48/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{11}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-48'};
+matlabbatch{11}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{11}.spm.dcm.estimate.est_type = 1;
+matlabbatch{11}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{12}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-50/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-50/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{12}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-50'};
+matlabbatch{12}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{12}.spm.dcm.estimate.est_type = 1;
+matlabbatch{12}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{13}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-51/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-51/DCM_nonlinear_Template.mat'
+                                                     
+                                                    
+                                                     };
+%%
+matlabbatch{13}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-51'};
+matlabbatch{13}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{13}.spm.dcm.estimate.est_type = 1;
+matlabbatch{13}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+%% 
+matlabbatch{14}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-52/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-52/DCM_nonlinear_Template.mat'
+                                                     
+                                            
+                                                     };
+%%
+matlabbatch{14}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-52'};
+matlabbatch{14}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{14}.spm.dcm.estimate.est_type = 1;
+matlabbatch{14}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+%% 
+matlabbatch{15}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-53/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-53/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{15}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-53'};
+matlabbatch{15}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{15}.spm.dcm.estimate.est_type = 1;
+matlabbatch{15}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+%% 
+matlabbatch{16}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-54/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-54/DCM_nonlinear_Template.mat'
+                                                     
+                                                                                                     };
+%%
+matlabbatch{16}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-54'};
+matlabbatch{16}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{16}.spm.dcm.estimate.est_type = 1;
+matlabbatch{16}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+matlabbatch{17}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-55/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-55/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     };
+%%
+matlabbatch{17}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-55'};
+matlabbatch{17}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{17}.spm.dcm.estimate.est_type = 1;
+matlabbatch{17}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+%%
+matlabbatch{18}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-58/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-58/DCM_nonlinear_Template.mat'
+                                                     
+                                                
+                                                     
+                                                     };
+%%
+matlabbatch{18}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-58'};
+matlabbatch{18}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{18}.spm.dcm.estimate.est_type = 1;
+matlabbatch{18}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+%%
+matlabbatch{19}.spm.dcm.estimate.dcms.model.dcmmat = {
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-59/DCM_bilinear_Template.mat'
+                                                     '/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-59/DCM_nonlinear_Template.mat'
+                                                     
+                                            
+                                                     };
+%%
+matlabbatch{19}.spm.dcm.estimate.output.single.dir = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/1stLevel_Jan2022_T2/sub-59'};
+matlabbatch{19}.spm.dcm.estimate.output.single.name = 'bilinear_nonlinear_full';
+matlabbatch{19}.spm.dcm.estimate.est_type = 1;
+matlabbatch{19}.spm.dcm.estimate.fmri.analysis = 'time';
+ 
+ 
+
+
+
