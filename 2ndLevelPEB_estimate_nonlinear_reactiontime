@@ -1,0 +1,62 @@
+%-----------------------------------------------------------------------
+% Job saved on 17-Oct-2022 15:00:15 by cfg_util (rev $Rev: 7345 $)
+% spm SPM - SPM12 (7771)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+matlabbatch{1}.spm.dcm.peb.specify.name = 'EPY_nonlinear_RT';
+matlabbatch{1}.spm.dcm.peb.specify.model_space_mat = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/PEB/3-level/GCM1_EPY_nonlinear.mat'};
+matlabbatch{1}.spm.dcm.peb.specify.dcm.index = 1;
+%%
+matlabbatch{1}.spm.dcm.peb.specify.cov.design_mtx.cov_design = [0.036775877868421 -1
+                                                                -0.072330373131579 -1
+                                                                0.00689879386842096 -1
+                                                                -0.018128289131579 -1
+                                                                0.00551754386842096 -1
+                                                                -0.0195074561315791 -1
+                                                                0.010375876868421 -1
+                                                                0.352961293868421 -1
+                                                                0.00829045986842097 -1
+                                                                0.132323793868421 -1
+                                                                -0.012217872131579 -1
+                                                                0.146225876868421 -1
+                                                                -0.208861623131579 -1
+                                                                -0.00805537313157906 -1
+                                                                0.204592543868421 -1
+                                                                0.121555043868421 -1
+                                                                0.155252960868421 -1
+                                                                -0.046267873131579 -1
+                                                                -0.0883116221315791 -1
+                                                                -0.000749736842105331 1
+                                                                -0.0525497368421053 1
+                                                                0.0464502631578947 1
+                                                                -0.0316497368421053 1
+                                                                -0.0939497368421053 1
+                                                                0.0162502631578947 1
+                                                                -0.0550497368421053 1
+                                                                0.339750263157895 1
+                                                                0.0075502631578947 1
+                                                                0.181950263157895 1
+                                                                -0.155449736842105 1
+                                                                0.0065502631578947 1
+                                                                -0.174449736842105 1
+                                                                -0.00744973684210531 1
+                                                                0.0392502631578947 1
+                                                                0.139950263157895 1
+                                                                0.161150263157895 1
+                                                                0.0100502631578947 1
+                                                                -0.0562497368421053 1];
+%%
+matlabbatch{1}.spm.dcm.peb.specify.cov.design_mtx.name = {
+                                                          'Reaction Time'
+                                                          'Timepoint'
+                                                          }';
+matlabbatch{1}.spm.dcm.peb.specify.fields.custom = {'D'};
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.components = 'All';
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.ratio = 16;
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.expectation = 0;
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.var = 0.0625;
+matlabbatch{1}.spm.dcm.peb.specify.priors_glm.group_ratio = 1;
+matlabbatch{1}.spm.dcm.peb.specify.estimation.maxit = 64;
+matlabbatch{1}.spm.dcm.peb.specify.show_review = 0;
+
+
