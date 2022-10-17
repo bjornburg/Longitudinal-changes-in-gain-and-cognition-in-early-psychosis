@@ -1,0 +1,36 @@
+%-----------------------------------------------------------------------
+% Job saved on 03-Apr-2019 18:49:11 by cfg_util (rev $Rev: 6460 $)
+% spm SPM - SPM12 (6685)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+clear all
+spm_jobman('initcfg')
+ 
+files_rs = dir('/mnt/data/bjornB/T2/fmri_analysis/DCM/PEB/T1/Level1/sub-*');
+files_4d_names={files_rs.name};
+glmdirn='/mnt/data/bjornB/T2/fmri_analysis/DCM/PEB/T1/Level1';
+ 
+ 
+for jj=1:length(files_rs)
+ 
+spm_file=fullfile(glmdirn,files_rs(jj).name,'SPM.mat');
+voi_files = spm_select('FPList',fullfile(glmdirn,files_rs(jj).name),'VOI*.*mat$');
+ 
+ 
+matlabbatch{1}.spm.dcm.fmri.regions.voimat=cellstr(voi_files);
+matlabbatch{1}.spm.dcm.fmri.regions.dcmmat = {
+ 
+ [glmdirn filesep files_rs(jj).name filesep 'DCM_bilinear_Template.mat']
+ [glmdirn filesep files_rs(jj).name filesep 'DCM_nonlinear_Template.mat']
+ };
+ 
+ 
+matlabbatch{1}.spm.dcm.fmri.inputs.spmmat = cellstr(spm_file);
+matlabbatch{1}.spm.dcm.fmri.inputs.session = 1;
+ 
+output_list = spm_jobman('run',matlabbatch);
+ 
+clearvars matlabbatch
+end
+
+
