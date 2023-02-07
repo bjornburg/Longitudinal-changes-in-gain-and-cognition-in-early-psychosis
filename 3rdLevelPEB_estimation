@@ -9,3 +9,13 @@ PEB3 = spm_dcm_peb(PEBs, X3);
 BMA3 = spm_dcm_peb_bmc(PEB3);
 spm_dcm_peb_review(BMA3);
 
+%PEBofPEBs for within EP group analysis of interaction between reaction time delta and timepoint
+ 
+%take 2nd level PEBs and conduct 3rd level PEB with design matrix 3
+load ./X3.mat; %[1 1; -1 1] Commonalities first column, Differences second column
+PEBs = {PEB1; PEB2}; %PEB 1 for EP group timepoint 1, PEB2 for EP group timepoint 2
+PEB3 = spm_dcm_peb(PEBs, X3);
+ 
+%BMR and review
+BMA3 = spm_dcm_peb_bmc(PEB3);
+spm_dcm_peb_review(BMA3);
