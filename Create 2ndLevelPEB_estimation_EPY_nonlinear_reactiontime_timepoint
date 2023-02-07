@@ -1,0 +1,38 @@
+%-----------------------------------------------------------------------
+% Job saved on 07-Feb-2023 14:16:29 by cfg_util (rev $Rev: 7345 $)
+% spm SPM - SPM12 (7771)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+matlabbatch{1}.spm.dcm.peb.specify.name = 'EPY_nonlinear_RTdelta_T1';
+matlabbatch{1}.spm.dcm.peb.specify.model_space_mat = {'/mnt/data/bjornB/T2/fmri_analysis/DCM/PEB/3-level/GCM_EPY_nonlinear_pre.mat'};
+matlabbatch{1}.spm.dcm.peb.specify.dcm.index = 1;
+%%
+matlabbatch{1}.spm.dcm.peb.specify.cov.design_mtx.cov_design = [0.036775877868421
+                                                                -0.072330373131579
+                                                                0.00689879386842096
+                                                                -0.018128289131579
+                                                                0.00551754386842096
+                                                                -0.0195074561315791
+                                                                0.010375876868421
+                                                                0.352961293868421
+                                                                0.00829045986842097
+                                                                0.132323793868421
+                                                                -0.012217872131579
+                                                                0.146225876868421
+                                                                -0.208861623131579
+                                                                -0.00805537313157906
+                                                                0.204592543868421
+                                                                0.121555043868421
+                                                                0.155252960868421
+                                                                -0.046267873131579
+                                                                -0.0883116221315791];
+%%
+matlabbatch{1}.spm.dcm.peb.specify.cov.design_mtx.name = {'Reaction Time'};
+matlabbatch{1}.spm.dcm.peb.specify.fields.custom = {'D'};
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.components = 'All';
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.ratio = 16;
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.expectation = 0;
+matlabbatch{1}.spm.dcm.peb.specify.priors_between.var = 0.0625;
+matlabbatch{1}.spm.dcm.peb.specify.priors_glm.group_ratio = 1;
+matlabbatch{1}.spm.dcm.peb.specify.estimation.maxit = 64;
+matlabbatch{1}.spm.dcm.peb.specify.show_review = 0;
